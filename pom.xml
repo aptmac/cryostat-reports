@@ -10,6 +10,12 @@
       <id>github</id>
       <url>https://maven.pkg.github.com/cryostatio/cryostat-core</url>
     </repository>
+    <repository>
+      <id>adoptium</id>
+      <name>Adoptium</name>
+      <url>https://adoptium.jfrog.io/artifactory/jmc-libs-snapshots/</url>
+      <layout>default</layout>
+    </repository>
   </repositories>
   <properties>
     <compiler-plugin.version>3.12.1</compiler-plugin.version>
@@ -25,7 +31,8 @@
     <assembly-plugin.version>3.6.0</assembly-plugin.version>
     <com.diffplug.spotless.maven.plugin.version>2.41.1</com.diffplug.spotless.maven.plugin.version>
     <org.codehaus.mojo.build.helper.plugin.version>3.5.0</org.codehaus.mojo.build.helper.plugin.version>
-    <io.cryostat.core.version>2.27.0</io.cryostat.core.version>
+    <io.cryostat.core.version>2.28.0-SNAPSHOT</io.cryostat.core.version>
+    <jmc.core.version>9.0.0-SNAPSHOT</jmc.core.version>
     <org.jsoup.version>1.16.2</org.jsoup.version>
     <com.mycila.license.maven.plugin.version>4.3</com.mycila.license.maven.plugin.version>
     <!-- TODO Remove if Quarkus updates Netty in 3.2 -->
@@ -83,6 +90,26 @@
       <artifactId>jsoup</artifactId>
       <version>${org.jsoup.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openjdk.jmc</groupId>
+      <artifactId>common</artifactId>
+      <version>${jmc.core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjdk.jmc</groupId>
+      <artifactId>flightrecorder</artifactId>
+      <version>${jmc.core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjdk.jmc</groupId>
+      <artifactId>flightrecorder.rules</artifactId>
+      <version>${jmc.core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjdk.jmc</groupId>
+      <artifactId>flightrecorder.rules.jdk</artifactId>
+      <version>${jmc.core.version}</version>
     </dependency>
   </dependencies>
   <build>
